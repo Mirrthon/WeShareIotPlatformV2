@@ -38,8 +38,8 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
             public void run() {
                 date = new Date();
 
-                formatData.put("temperature",36.5);
-                formatData.put("switch",1);
+                formatData.put("temperature","36.5");
+                formatData.put("switch","1");
                 formatData.put("time",simpleDateFormat.format(date));
 
                 jsonObject.put("device_id","DEVICE-ID");

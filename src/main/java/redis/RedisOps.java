@@ -69,6 +69,14 @@ public class RedisOps {
         jedis.close();
     }
 
+
+    //set redis hash 序列化单次删除
+    public static void deleteObjectHash(String deviceId,int number){
+        Jedis jedis =redisConnection.getJedis();
+        jedis.hdel(deviceId.getBytes(),DataUtil.intToByteArray(number));
+        jedis.close();
+    }
+
     //get redis hash 反序列化 批量取key相同的hash表
     public static HashMap<Integer, VariableRule> getObjectHashAll(String deviceId){
         Jedis jedis = redisConnection.getJedis();
