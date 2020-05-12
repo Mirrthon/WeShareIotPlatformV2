@@ -1,13 +1,11 @@
 package websocket.config;
 
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import cn.hutool.log.Log;
+import cn.hutool.log.LogFactory;
 import org.springframework.stereotype.Component;
-
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
@@ -16,12 +14,15 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-
+/**
+ * WebSocketServer
+ *
+ */
 @ServerEndpoint("/imserver/{userId}")
 @Component
 public class WebSocketServer {
 
-    static Log log= LogFactory.getLog(WebSocketServer.class);
+    static Log log=LogFactory.get(WebSocketServer.class);
     /**静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。*/
     private static int onlineCount = 0;
     /**concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。*/
@@ -109,7 +110,6 @@ public class WebSocketServer {
         log.error("用户错误:"+this.userId+",原因:"+error.getMessage());
         error.printStackTrace();
     }
-
     /**
      * 实现服务器主动推送
      */

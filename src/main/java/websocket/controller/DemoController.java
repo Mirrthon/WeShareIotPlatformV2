@@ -12,7 +12,8 @@ import websocket.config.WebSocketServer;
 import java.io.IOException;
 
 /**
- * 后面还需修改
+ * WebSocketController
+ *
  */
 @RestController
 public class DemoController {

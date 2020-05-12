@@ -9,8 +9,6 @@ import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.configuration.Configuration;
 import redis.RedisConnection;
 import redis.RedisOps;
-
-import javax.persistence.Tuple;
 import java.util.HashMap;
 
 
